@@ -1,0 +1,128 @@
+:root {
+    --primary-color: #1a1a1a;
+    --sec-color: #646cff;
+    --ter-color: #373636;
+    font-size: large;
+    text-align: left;
+}
+
+.top-bar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 90%;
+    padding: 10px 20px 10px 20px;
+    margin: 10px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.top-bar .logo img {
+    width: 300px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.navbar {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    z-index: -1;
+}
+
+.navbar .curr-path {
+    /* border: 2px solid rgb(205, 198, 16); */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.curr-path p {
+    margin: 0;
+    padding: 6px;
+}
+
+.home-login-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    background-color: var(--primary-color);
+    padding: 80px;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.home-login-container p {
+    font-size: 30px;
+}
+
+.home-login-container a {
+    text-decoration: none;
+    color: rgb(127, 90, 240, 0.9);
+}
+
+.home-login-container a:hover {
+    color: rgba(127, 90, 240, 1);
+}
+
+.home-login-container button {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(183, 39, 255);
+    border: none;
+    width: 60%;
+}
+
+.home-login-container button:hover {
+    background-color: rgba(183, 39, 255, 0.9);
+    border: none;
+}
+
+.navbar .nav-btns {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(19, 19, 19, 0.3);
+}
+
+button {
+    font-size: 15px;
+    padding: 10px;
+    margin: 0 5px 0 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    /* outline: 4px auto blue; */
+}
+
+button:hover {
+    border: 1px solid rgb(183, 39, 255);
+}
+
+.active {
+    /* border: 1px solid #646cff !important; */
+    border: none !important;
+}
+
+button:hover {
+    cursor: pointer;
+}
