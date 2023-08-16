@@ -109,7 +109,12 @@ const SellerDashboard = () => {
         cloudinaryData.append('upload_preset', 'grocsy');
 
         const AxiosInst = axios.create();
-        await AxiosInst.post('https://api.cloudinary.com/v1_    1/grocsy-uploads/image/upload', cloudinaryData).then((res) => {
+        await AxiosInst.post('https://api.cloudinary.com/v1_1/grocsy-uploads/image/upload', cloudinaryData, {
+            headers: {
+                'Access-Control-Allow-Origin': '*', // Required for CORS support to work
+                'Content-Type': 'multipart/form-data',
+            },
+        }).then((res) => {
             setImageUrl(res.data.secure_url);
             setPublicId(res.data.public_id);
         }).catch((err) => {
