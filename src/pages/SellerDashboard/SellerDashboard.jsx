@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import {cors} from 'cors';
 import axiosInstance from '../../axios';
 import { toast, Toaster } from 'react-hot-toast';
 import { Hcard } from '../../components/Card/Card';
