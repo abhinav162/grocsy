@@ -1,0 +1,58 @@
+import './Card.css'
+import axiosInstance from '../../axios';
+import { useEffect, useState, useCallback } from 'react';
+import { toast, Toaster } from 'react-hot-toast';
+
+const Card = ({ id, name, desc, price, imageUrl, quantity, unit, category }) => {
+    return (
+        <div className="product" id={id}>
+            <div className='product-image'>
+                <img src={imageUrl} alt={name} />
+            </div>
+            <div className='product-details'>
+                <h3>{name}</h3>
+                <p>{desc}</p>
+                <p>{quantity}{unit}</p>
+                <p>{category}</p>
+                <p><span>&#8377;</span>{price}</p>
+            </div>
+        </div>
+    );
+}
+
+export const Hcard = ({ id, name, desc, price, imageUrl, quantity, unit, category, fetchSellerProducts }) => {
+    return (
+        <div className="h-product" id={id}>
+            <div className='product-image'>
+                <img src={imageUrl} alt={name} />
+            </div>
+            <div className='product-details'>
+                <h3>{name}</h3>
+                <p>{desc}</p>
+                <p>{quantity}{unit}</p>
+                <p>{category}</p>
+                <p><span>&#8377;</span>{price}</p>
+            </div>
+            <div>
+                <button type="button" onClick={() => { }}>Edit</button>
+                <button type="button" onClick={async () => {
+                    try {
+                        await axiosInstance().delete('/delete-product/' + id).then((res) => {
+                            setTimeout(() => {
+                                fetchSellerProducts();
+                                toast.success(res.data.message);
+                            }, 1000);
+                        });
+                    }
+                    catch (err) {
+                        console.error(err);
+                        toast.error(err.response.data.error || 'An error occurred. Please try again.')
+                    }
+                }}>Delete</button>
+            </div>
+            <Toaster />
+        </div>
+    );
+}
+
+export default Card;

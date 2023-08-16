@@ -20,14 +20,20 @@ const LoginPage = () => {
             localStorage.setItem("userType", res.data.user.userType);
             localStorage.setItem("userId", res.data.user._id);
 
-            toast.success("Login successful!");
-            const userType = res.data.user.userType;
+            toast.success("Login successful!", {
+                position: "bottom-right",
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            });
 
             setTimeout(() => {
                 setEmail("");
                 setPassword("");
-                if (userType === 'buyer') { navigate('/'); }
-                else navigate('/seller-dashboard');
+                navigate('/');
+                window.location.reload();
             }, 1000);
         }).catch((err) => {
             console.log(err);

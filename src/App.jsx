@@ -15,7 +15,12 @@ function App() {
   useEffect(() => {
     const currentPathname = location.pathname.split('/')[1];
 
-    setCurrPage(currentPathname || 'home');
+    if (currentPathname === '') {
+      setCurrPage('home');
+    }
+    else {
+      setCurrPage(currentPathname);
+    }
   }, [location]);
 
   useEffect(() => {
@@ -32,114 +37,108 @@ function App() {
     else if (id === "logout") {
       localStorage.removeItem('token')
       navigate('/');
+      window.location.reload();
     }
     else if (id == "signup") {
       navigate('/signup')
     }
     else if (id == "login") {
       navigate('/login')
+      // window.location.reload();
     }
-    else if(id == "seller-dashboard")
-    {
+    else if (id == "seller-dashboard") {
       navigate('/seller-dashboard')
     }
-    else if(id == 'orders')
-    {
+    else if (id == 'orders') {
       navigate('/orders')
     }
   }, [navigate])
 
   const token = localStorage.getItem('token');
   const userType = localStorage.getItem('userType')
+  const name = localStorage.getItem('name')
 
   return (
     <>
-      <Routes>
-        <Route path="/" Component={() => {
-          return (
-            token ? <Home /> :
-              <>
-                <div className='home-login-container'>
-                  <p>Log in or Register</p>
+      <main>
+        <div className='navbar'>
+          <div className='logo'>
+            <h1>Grocsy</h1>
+          </div>
+          <div className='nav-btns'>
+            <button id='home' className='active' onClick={() => {
+              handleClick("home");
+            }}>Home</button>
+
+            {
+              token ? (
+                userType === 'seller' ?
+                  (
+                    <button id='seller-dashboard' onClick={() => {
+                      handleClick("seller-dashboard")
+                    }}>Seller Dashboard</button>
+                  ) :
+                  (
+                    <button id='orders' onClick={() => {
+                      handleClick('orders')
+                    }}>Orders</button>
+                  )
+              ) : null
+            }
+
+            {
+              token ? (
+                <button id='logout' onClick={() => {
+                  handleClick("logout");
+                }}>Logout</button>
+              ) : null
+            }
+          </div>
+          <div className='login-signup'>
+            {
+              token ? (
+                <>
+                  <button className='profile-name'>{name}</button>
+                  <div className='profile-image'></div>
+                </>
+              ) : (
+                <>
                   <button id='login' onClick={() => {
-                    handleClick('login');
+                    handleClick("login");
                   }}>Login</button>
                   <button id='signup' onClick={() => {
-                    handleClick("signup")
-                  }}>Register</button>
-                </div>
-              </>
-          )
-        }} />
-
-        <Route path="/login" Component={() => {
-          return token ? <Home /> : <Login />
-        }} />
-        <Route path="/signup" Component={Signup} />
-        <Route path="*" Component={Login} />
-
-        <Route path="/seller-dashboard" Component={SellerDashboard} />
-      </Routes>
-
-      <div className='navbar'>
-        <div className='curr-path'>
-          <p>g.{currPage}</p>
-        </div>
-        <div className='nav-btns'>
-          <button id='home' className='active' onClick={() => {
-            handleClick("home");
-          }}>Home</button>
-
-          {
-            (token && localStorage.getItem('userType' === 'buyer')) ? (
-              <button id='Orders' onClick={() => {
-                handleClick("Orders");
-              }}>Orders</button>
-            ) : null
-          }
-
-          {
-            (token && localStorage.getItem('userType' == 'seller')) ? (
-              <button id='seller-dashboard' onClick={() => {
-                handleClick("seller-dashboard");
-              }}>Seller Dashboard</button>
-            ) : null
-          }
-
-          {
-            token ? (
-              userType === 'seller' ? 
-              (
-                <button id='seller-dashboard' onClick={() => {
-                  handleClick("seller-dashboard")
-                }}>Seller Dashboard</button>
-              ) : 
-              (
-                <button id='orders' onClick={() => {
-                  handleClick('orders')
-                }}>Orders</button>
+                    handleClick("signup");
+                  }}>Sign Up</button>
+                </>
               )
-            ) : null
-          }
-
-          {
-            token ? (
-              <button id='logout' onClick={() => {
-                handleClick("logout");
-              }}>Logout</button>
-            ) : null
-          }
-
-          {
-            token ? null : (
-              <button id='signup' onClick={() => {
-                handleClick("signup");
-              }
-              }>Sign Up</button>
-            )
-          }
+            }
+          </div>
         </div>
-      </div>
+
+        <div className='hero'>
+          <div className='hero-content'>
+            <Routes>
+              <Route path="/" Component={Home} />
+              <Route path="/login" Component={Login} />
+              <Route path="/signup" Component={Signup} />
+              {/* <Route path="*" Component={Login} /> */}
+
+              <Route path="/seller-dashboard" Component={SellerDashboard} />
+            </Routes>
+          </div>
+        </div>
+
+        <div className='footer'>
+          <div className='footer-content'>
+            <div className='footer-section about'>
+              <h1 className='logo-text'>Grocsy Footer</h1>
+              <p>
+                Grocsy is an online grocery store where you can buy groceries and other household items.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
     </>
   )
 }

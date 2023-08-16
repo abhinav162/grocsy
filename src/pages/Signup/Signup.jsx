@@ -15,7 +15,14 @@ const Signup = () => {
         e.preventDefault();
 
         axiosInstance().post('/register', { name, email, password, userType }).then((res) => {
-            toast.success("Registered Successfully!");
+            toast.success("Registered Successfully!", {
+                position: "bottom-right",
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            });
 
             setTimeout(() => {
                 setName("");

@@ -1,0 +1,128 @@
+.home {
+    display: grid;
+    grid-template-areas:
+    "banner"
+    "product-heading"
+    "products"
+    "categories-heading"
+    "categories"
+    "features-heading"
+    "features";
+    grid-template-rows: 45vh 80px auto 80px auto 80px auto;
+}
+
+.home-banner {
+    grid-area: banner;
+    background-image: url('../../assets/banner.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    /* padding: 10px; */
+    display: grid;
+    place-content: center;
+    /* grid-template-rows: 100%; */
+}
+
+.banner-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+}
+
+.banner-content > * {
+    margin: 0;
+}
+
+.banner-content span {
+    color: var(--accent-1);
+}
+
+.banner-content h2 {
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.banner-content h3 {
+    font-weight: 300;
+    color: rgba(67, 67, 67, 0.652);
+}
+
+.banner-content button {
+    border: var(--border);
+    transition: all 0.3s ease-in-out;
+    padding: 10px 20px;
+}
+
+.banner-content button:hover {
+    background-color: var(--accent-1);
+    color: white;
+}
+
+.product-heading {
+    grid-area: product-heading;
+}
+
+.categories-heading {
+    grid-area: categories-heading;
+}
+
+.features-heading {
+    grid-area: features-heading;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.heading span {
+    font-size: 30px;
+    font-weight: 600;
+    padding: 10px 30px 10px 30px;
+    /* clip-path: polygon(0 0, 100% 0, 93% 50%, 100% 100%, 0% 100%, 7% 50%); */
+    clip-path: polygon(0 0, 85% 0, 100% 50%,85% 100%, 0% 100%, 10% 50%);
+    margin: 30px;
+    background-color: var(--accent-1);
+}
+
+.product-heading span{
+    font-size: 30px;
+    font-weight: 600;
+    padding: 10px 30px 10px 30px;
+    /* clip-path: polygon(0 0, 100% 0, 93% 50%, 100% 100%, 0% 100%, 7% 50%); */
+    clip-path: polygon(0 0, 85% 0, 100% 50%,85% 100%, 0% 100%, 10% 50%);
+    margin: 30px;
+    background-color: var(--accent-1);
+}
+
+.home-products {
+    grid-area: products;
+}
+
+.categories {
+    grid-area: categories;
+}
+
+.features {
+    grid-area: features;
+}
+
+.home-products {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    width: 100%;
+    border: 2px solid var(--primary-color);
+    /* padding: 30px; */
+}
