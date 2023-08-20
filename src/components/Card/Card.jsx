@@ -2,6 +2,7 @@ import './Card.css'
 import axiosInstance from '../../axios';
 import { useEffect, useState, useCallback } from 'react';
 import { toast, Toaster } from 'react-hot-toast';
+import ProductForm from '../Product form/AddProductForm';
 
 const Card = ({ id, name, desc, price, imageUrl, quantity, unit, category }) => {
     return (
@@ -34,13 +35,22 @@ export const Hcard = ({ id, name, desc, price, imageUrl, quantity, unit, categor
                 <p><span>&#8377;</span>{price}</p>
             </div>
             <div>
-                <button type="button" onClick={() => { }}>Edit</button>
+                <button type="button" onClick={() => {
+                    <ProductForm />
+                }}>Edit</button>
                 <button type="button" onClick={async () => {
                     try {
                         await axiosInstance().delete('/delete-product/' + id).then((res) => {
                             setTimeout(() => {
                                 fetchSellerProducts();
-                                toast.success(res.data.message);
+                                toast.success(res.data.message,{
+                                    position: "bottom-right",
+                                    style: {
+                                        borderRadius: '10px',
+                                        background: '#333',
+                                        color: '#fff',
+                                    },
+                                });
                             }, 1000);
                         });
                     }

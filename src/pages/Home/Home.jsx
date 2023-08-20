@@ -3,6 +3,12 @@ import { useEffect, useState } from "react";
 import './Home.css'
 import Card from "../../components/Card/Card";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+
 const Home = () => {
     const [products, setProducts] = useState([])
 

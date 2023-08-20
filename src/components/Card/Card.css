@@ -11,7 +11,8 @@
 }
 
 .product img {
-    width: 150px;
+    width: auto;
+    height: 200px;
     border-radius: 10px;
 }
 
