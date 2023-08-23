@@ -3,6 +3,7 @@ import axiosInstance from '../../axios';
 import { useEffect, useState, useCallback } from 'react';
 import { toast, Toaster } from 'react-hot-toast';
 import ProductForm from '../Product form/AddProductForm';
+import AddToCart from '../AddToCart/AddToCart';
 
 const Card = ({ id, name, desc, price, imageUrl, quantity, unit, category }) => {
     return (
@@ -12,11 +13,9 @@ const Card = ({ id, name, desc, price, imageUrl, quantity, unit, category }) => 
             </div>
             <div className='product-details'>
                 <h3>{name}</h3>
-                <p>{desc}</p>
-                <p>{quantity}{unit}</p>
-                <p>{category}</p>
-                <p><span>&#8377;</span>{price}</p>
+                {price ? <p><span>&#8377;</span>{price}</p> : null}
             </div>
+            {price ? <AddToCart /> : <button>Read More</button> }
         </div>
     );
 }
@@ -24,7 +23,7 @@ const Card = ({ id, name, desc, price, imageUrl, quantity, unit, category }) => 
 export const Hcard = ({ id, name, desc, price, imageUrl, quantity, unit, category, fetchSellerProducts }) => {
     return (
         <div className="h-product" id={id}>
-            <div className='product-image'>
+            <div className='h-product-image'>
                 <img src={imageUrl} alt={name} />
             </div>
             <div className='product-details'>
@@ -43,7 +42,7 @@ export const Hcard = ({ id, name, desc, price, imageUrl, quantity, unit, categor
                         await axiosInstance().delete('/delete-product/' + id).then((res) => {
                             setTimeout(() => {
                                 fetchSellerProducts();
-                                toast.success(res.data.message,{
+                                toast.success(res.data.message, {
                                     position: "bottom-right",
                                     style: {
                                         borderRadius: '10px',

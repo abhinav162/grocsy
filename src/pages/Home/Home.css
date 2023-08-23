@@ -108,21 +108,38 @@
     grid-area: products;
 }
 
-.categories {
-    grid-area: categories;
-}
-
-.features {
-    grid-area: features;
-}
 
 .home-products {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     gap: 10px;
     width: 100%;
-    border: 2px solid var(--primary-color);
+}
+
+
+/* For Category */
+.categories {
+    grid-area: categories;
+    width: 100%;
+    overflow: hidden;
+}
+
+.categories-list {
     /* padding: 30px; */
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll !important;
+    overflow-x: scroll !important;
+    scroll-behavior: auto;
+    align-items: center;
+    /* justify-content: flex-start; */
+}
+
+
+/* For Features */
+
+.features {
+    grid-area: features;
 }

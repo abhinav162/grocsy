@@ -60,7 +60,22 @@ const Home = () => {
                 <div className="categories">
                     <div className="categories-list">
                         <div className="category">
-                            <h3>Vegetables</h3>
+                            <Card name = "Vegitables" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/a136osnwjhpjuqfvezf0"/>
+                        </div>
+                        <div className="category">
+                            <Card name = "Fruits" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/myaxzhkilmrqcdjc1jk2"/>
+                        </div>
+                        <div className="category">
+                            <Card name = "Dairy" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/fcvquyiassig8sipm9zu"/>
+                        </div>
+                        <div className="category">
+                            <Card name = "Soft Drinks" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/inoyaehxwpuggromfe8n"/>
+                        </div>
+                        <div className="category">
+                            <Card name = "Meat" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/mybfwlcis2yezk1fqrii"/>
+                        </div>
+                        <div className="category">
+                            <Card name = "Sea Food" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/uphkfls2wio6zmtftrex"/>
                         </div>
                     </div>
                 </div>
