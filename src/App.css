@@ -26,7 +26,7 @@ main {
 
 .navbar {
     grid-area: navbar;
-    /* position: fixed ; */
+    position: fixed ;
     z-index: 1;
     height: 100px;
     background-color: white;

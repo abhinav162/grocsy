@@ -60,6 +60,7 @@ const Signup = () => {
                     </select>
                 </div>
                 <button type="submit">Signup</button>
+                <p>Already have an account? <a href="/login">Login</a></p>
             </form>
 
             <Toaster />

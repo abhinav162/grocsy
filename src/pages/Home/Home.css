@@ -124,26 +124,41 @@
     grid-area: categories;
     width: 100%;
     overflow: hidden;
+    padding: 30px;
 }
 
 .categories-list {
-    /* padding: 30px; */
     display: flex;
     flex-wrap: nowrap;
     overflow: scroll !important;
     overflow-x: scroll !important;
     scroll-behavior: auto;
     align-items: center;
-    /* justify-content: flex-start; */
 }
 
 
 /* For Features */
-
 .features {
     grid-area: features;
+    padding: 30px;
+    overflow: hidden;
 }
 
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    /* transform: scale(1.2); */
+}
+
+.feature .product {
+    border-radius: 0px;
+    height: 300px;
+    width: 400px;
+}
 
 /* MEDIA QUERIES */
 

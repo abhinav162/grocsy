@@ -5,7 +5,7 @@ import { toast, Toaster } from 'react-hot-toast';
 import ProductForm from '../Product form/AddProductForm';
 import AddToCart from '../AddToCart/AddToCart';
 
-const Card = ({ id, name, desc, price, imageUrl, quantity, unit, category }) => {
+const Card = ({ id, name, desc, price, imageUrl, quantity, unit, category, showBtn }) => {
     return (
         <div className="product" id={id}>
             <div className='product-image'>
@@ -13,9 +13,11 @@ const Card = ({ id, name, desc, price, imageUrl, quantity, unit, category }) => 
             </div>
             <div className='product-details'>
                 <h3>{name}</h3>
-                {price ? <p><span>&#8377;</span>{price}</p> : null}
+                {price ? <p><span><b>{quantity}</b>{unit}</span> -- <span>&#8377;</span>{price}</p> : null}
             </div>
-            {price ? <AddToCart /> : <button>Read More</button> }
+            {
+                showBtn != false ? ( price ? <AddToCart /> : <button>Read More</button> ) : null 
+            }
         </div>
     );
 }
