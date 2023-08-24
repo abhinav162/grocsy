@@ -1,0 +1,123 @@
+.footer-content {
+    /* margin: 10px;
+    padding: 30px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    grid-template-areas:
+        "about contact  social  subscribe"
+        "copyrgt copyrgt copyrgt copyrgt";
+    
+    margin: 0 20px 0 20px;
+}
+
+.footer-p1 {
+    grid-area: about;
+}
+
+.footer-p2 {
+    grid-area: contact;
+}
+
+.footer-p3 {
+    grid-area: social;
+}
+
+.footer-p4 {
+    grid-area: subscribe;
+}
+
+.footer-p5-cr {
+    grid-area: copyrgt;
+    margin: 0 0 0 0;
+    font-size: large !important;
+}
+
+.footer h3 {
+    margin-top: 10px;
+}
+
+.footer-p1,
+.footer-p2,
+.footer-p3,
+.footer-p4,
+.footer-p5-cr {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(67, 67, 67, 0.652);
+
+    a {
+        text-decoration: none;
+        color: rgba(67, 67, 67, 0.652);
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        padding: 0 0 5px 0;
+    }
+
+    span,a {
+        transition: all 0.3s ease-in-out;
+    }
+
+    li:hover {
+        span,a {
+            color: var(--accent-2);
+            margin: 0 0 0 10px;
+        }
+    }
+}
+
+.footer-p1 {
+    .social-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+
+        i {
+            color: var(--accent-2);
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 10%;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            background-color: #eee;
+        }
+
+        i:hover {
+            color: white;
+            background-color: var(--accent-2);
+        }
+    }
+}
+
+.footer-p4 {
+    overflow: hidden;
+    input {
+        width: 90%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 0px solid #eee;
+        background-color: #eee;
+        margin: 10px 0 10px 0;
+    }
+
+    button {
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 0px solid #eee;
+        background-color: var(--accent-2);
+        color: white;
+        margin: 10px 0 10px 0;
+    }
+}

@@ -34,9 +34,9 @@ const Home = () => {
                 </div>
 
                 {/* <h2 className="product-heading">Products <span></span></h2> */}
-                <div className="product-heading heading">
-                    <span>Products</span>
-                </div>
+                <h1 className="heading">
+                    <span>Shop Now</span>
+                </h1>
                 <div className="home-products">
                     {
                         products.length > 0
@@ -54,9 +54,12 @@ const Home = () => {
                     }
                 </div>
 
-                <div className="categories-heading  heading">
-                    <span>Categories</span>
+                <div>
+                    <h1 className="heading">
+                        <span>Shop by Category</span>
+                    </h1>
                 </div>
+
                 <div className="categories">
                     <div className="categories-list">
                         <div className="category">
@@ -81,25 +84,26 @@ const Home = () => {
                 </div>
 
                 {/* <h2>Why Grocsy?</h2> */}
-                <div className="features-heading heading">
-                    <span>features</span>
-                </div>
                 <div className="features">
-                    <div className="features">
-                        <div className="features-list">
-                            <div className="feature">
-                                <Card name="Fresh and Organic" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/v1692870361/grocsy-products/hbfipm6dbd9gubzslvyk.png" showBtn={false}/>
-                            </div>
-                            <div className="feature">
-                                <Card name="Free Delivery" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/v1692871129/grocsy-products/phlgbr96qqqj1fjuy6xa.png" showBtn={false}/>
-                            </div>
-                            <div className="feature">
-                                <Card name="Easy Payments" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/v1692871179/grocsy-products/ate6svdzy6lzgcjbv6oc.png" showBtn={false}/>
-                            </div>
+                    <h1 className="features-heading">
+                        <span>Why Grocsy?</span>
+                    </h1>
+                    <div className="features-list">
+                        <div className="feature">
+                            <Card name="Fresh and Organic" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/v1692870361/grocsy-products/hbfipm6dbd9gubzslvyk.png" showBtn={false} />
+                        </div>
+                        <div className="feature">
+                            <Card name="Free Delivery" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/v1692871129/grocsy-products/phlgbr96qqqj1fjuy6xa.png" showBtn={false} />
+                        </div>
+                        <div className="feature">
+                            <Card name="Easy Payments" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/v1692871179/grocsy-products/ate6svdzy6lzgcjbv6oc.png" showBtn={false} />
+                        </div>
+                        <div className="feature">
+                            <Card name="24/7 Support" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/v1692891411/grocsy-products/od0nnsuq0hzso9bcc26d.png" showBtn={false} />
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

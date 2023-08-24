@@ -6,9 +6,9 @@
     "products"
     "categories-heading"
     "categories"
-    "features-heading"
     "features";
-    grid-template-rows: 45vh 80px auto 80px auto 80px auto;
+    grid-template-rows: 45vh 80px auto 80px auto auto;
+    font-weight: 200;
 }
 
 .home-banner {
@@ -66,42 +66,10 @@
     color: white;
 }
 
-.product-heading {
-    grid-area: product-heading;
-}
-
-.categories-heading {
-    grid-area: categories-heading;
-}
-
-.features-heading {
-    grid-area: features-heading;
-}
-
 .heading {
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-}
-
-.heading span {
-    font-size: 30px;
-    font-weight: 600;
-    padding: 10px 30px 10px 30px;
-    /* clip-path: polygon(0 0, 100% 0, 93% 50%, 100% 100%, 0% 100%, 7% 50%); */
-    clip-path: polygon(0 0, 85% 0, 100% 50%,85% 100%, 0% 100%, 10% 50%);
-    margin: 30px;
-    background-color: var(--accent-1);
-}
-
-.product-heading span{
-    font-size: 30px;
-    font-weight: 600;
-    padding: 10px 30px 10px 30px;
-    /* clip-path: polygon(0 0, 100% 0, 93% 50%, 100% 100%, 0% 100%, 7% 50%); */
-    clip-path: polygon(0 0, 85% 0, 100% 50%,85% 100%, 0% 100%, 10% 50%);
-    margin: 30px;
-    background-color: var(--accent-1);
+    grid-area: product-heading categories-heading;
+    text-align: center;
+    font-weight: 200;
 }
 
 .home-products {
@@ -140,30 +108,56 @@
 /* For Features */
 .features {
     grid-area: features;
-    padding: 30px;
+    padding: 20px;
     overflow: hidden;
+    background-color: var(--accent-4);
+}
+
+.features-heading {
+    text-align: center;
+    font-weight: 200;
 }
 
 .features-list {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-evenly;
     width: 100%;
-    /* transform: scale(1.2); */
 }
 
 .feature .product {
-    border-radius: 0px;
-    height: 300px;
-    width: 400px;
+    border-radius: 20% 0 20% 0;
+    width: 20em;
+    background-color: white;
+}
+
+.feature .product .product-info {
+    /* padding: 10px; */
+    font-weight: 200;
+}
+
+.feature .product img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20% 0 20% 0;
 }
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:769px) {
     .home-products {
         justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 431px) {
+    .home-products {
+        /* justify-content: center; */
+    } 
+    
+    .feature .product {
+        transform: scale(0.9);
+        margin: 0;
     }
 }

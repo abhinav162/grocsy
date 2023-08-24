@@ -6,6 +6,8 @@ import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
 import Signup from './pages/Signup/Signup'
 import SellerDashboard from './pages/SellerDashboard/SellerDashboard'
+import Navbar from './components/Navbar/Navbar'
+import Footer from './components/Footer/Footer'
 
 function App() {
   const navigate = useNavigate();
@@ -62,57 +64,7 @@ function App() {
     <>
       <main>
         <div className='navbar'>
-          <div className='logo'>
-            <h1>Grocsy</h1>
-          </div>
-          <div className='nav-btns'>
-            <button id='home' className='active' onClick={() => {
-              handleClick("home");
-            }}>Home</button>
-
-            {
-              token ? (
-                userType === 'seller' ?
-                  (
-                    <button id='seller-dashboard' onClick={() => {
-                      handleClick("seller-dashboard")
-                    }}>Seller Dashboard</button>
-                  ) :
-                  (
-                    <button id='orders' onClick={() => {
-                      handleClick('orders')
-                    }}>Orders</button>
-                  )
-              ) : null
-            }
-
-            {
-              token ? (
-                <button id='logout' onClick={() => {
-                  handleClick("logout");
-                }}>Logout</button>
-              ) : null
-            }
-          </div>
-          <div className='login-signup'>
-            {
-              token ? (
-                <>
-                  <button className='profile-name'>{name}</button>
-                  <div className='profile-image'></div>
-                </>
-              ) : (
-                <>
-                  <button id='login' onClick={() => {
-                    handleClick("login");
-                  }}>Login</button>
-                  <button id='signup' onClick={() => {
-                    handleClick("signup");
-                  }}>Sign Up</button>
-                </>
-              )
-            }
-          </div>
+          <Navbar />
         </div>
 
         <div className='hero'>
@@ -129,14 +81,7 @@ function App() {
         </div>
 
         <div className='footer'>
-          <div className='footer-content'>
-            <div className='footer-section about'>
-              <h1 className='logo-text'>Grocsy Footer</h1>
-              <p>
-                Grocsy is an online grocery store where you can buy groceries and other household items.
-              </p>
-            </div>
-          </div>
+          <Footer />
         </div>
       </main>
     </>

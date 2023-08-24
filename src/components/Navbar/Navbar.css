@@ -1,7 +1,41 @@
 .navbar {
-    position: fixed;
-    bottom: 10px;
+    position: fixed ;
+    z-index: 1;
+    height: 100px;
+    background-color: white;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    box-shadow: 0px 10px 10px -9px rgba(0, 0, 0, 0.5);
+}
+
+.logo h1 {
+    padding: 10px;
+}
+
+.login-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+.profile-image {
+    width: 40%;
+    background-image: url('../../assets/profile.jpeg');
+    background-size: cover;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+}
+
+.navbar .nav-btns {
     padding: 10px;
     border-radius: 5px;
     display: flex;
@@ -10,43 +44,22 @@
     gap: 5px;
 }
 
-.navbar .curr-path {
-    /* border: 2px solid rgb(205, 198, 16); */
-    padding: 11px;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-.curr-path p {
-    margin: 0;
-    padding: 6px;
-}
-
-.navbar .nav-btns {
-    padding: 10px;
-    border-radius: 5px;
-    background-color: rgba(19, 19, 19, 0.3);
-}
-
-button {
+.navbar button {
     font-size: 15px;
     padding: 10px;
     margin: 0 5px 0 5px;
-    border-radius: 5px;
-    background-color: transparent;
-    border: 2px solid rgb(82, 79, 79);
-    /* outline: 4px auto blue; */
+    border-radius: 0px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
 }
 
-button:hover {
-    border: 2px solid rgb(183, 39, 255);
+.navbar button:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+    border-bottom: 2px solid var(--accent-2);
 }
 
 .active {
-    /* border: 1px solid #646cff !important; */
-    border: none !important;
-}
-
-button:hover {
-    cursor: pointer;
+    border-bottom: 2px solid var(--accent-1) !important;
 }

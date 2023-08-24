@@ -26,16 +26,6 @@ main {
 
 .navbar {
     grid-area: navbar;
-    position: fixed ;
-    z-index: 1;
-    height: 100px;
-    background-color: white;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5px;
-    box-shadow: 0px 10px 10px -9px rgba(0, 0, 0, 0.5);
 }
 
 .hero {
@@ -44,39 +34,6 @@ main {
 
 .footer {
     grid-area: footer;
-}
-
-.logo h1 {
-    padding: 10px;
-}
-
-.login-signup {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    padding: 10px;
-}
-
-.profile-image {
-    width: 40%;
-    background-image: url('./assets/profile.jpeg');
-    background-size: cover;
-    background-position: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
-}
-
-.navbar .nav-btns {
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
 }
 
 button {
@@ -92,14 +49,5 @@ button {
 button:hover {
     background-color: var(--accent-1);
     color: white;
-}
-
-.active {
-    /* border: 1px solid #646cff !important; */
-    border: none !important;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-button:hover {
     cursor: pointer;
 }
