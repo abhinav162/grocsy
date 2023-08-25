@@ -4,7 +4,8 @@ const axiosInstance = () => {
     const token = localStorage.getItem("token");
 
     return axios.create({
-        baseURL: "https://grocsy-backend-8r3g.vercel.app/",
+        // baseURL: "https://grocsy-backend-8r3g.vercel.app/",
+        baseURL: "https://grocsy-backend-production.up.railway.app/",
         headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + token,
