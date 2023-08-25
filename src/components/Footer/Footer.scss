@@ -10,6 +10,18 @@
         "copyrgt copyrgt copyrgt copyrgt";
     
     margin: 0 20px 0 20px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+        grid-template-areas:
+            "about"
+            "contact"
+            "social"
+            "subscribe"
+            "copyrgt";
+    }
 }
 
 .footer-p1 {
