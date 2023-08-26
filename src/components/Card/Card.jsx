@@ -16,7 +16,7 @@ const Card = ({ id, name, desc, price, imageUrl, quantity, unit, category, showB
                 {price ? <p><span><b>{quantity}</b>{unit}</span> -- <span>&#8377;</span>{price}</p> : null}
             </div>
             {
-                showBtn != false ? ( price ? <AddToCart /> : <button>Read More</button> ) : null 
+                showBtn != false ? ( price ? <AddToCart productID={id}/> : <button>Read More</button> ) : null 
             }
         </div>
     );

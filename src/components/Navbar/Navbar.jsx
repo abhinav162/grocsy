@@ -47,6 +47,9 @@ const Navbar = () => {
         else if (id == 'orders') {
             navigate('/orders')
         }
+        else if (id == 'cart') {
+            navigate('/cart')
+        }
     }, [navigate])
 
     const token = localStorage.getItem('token');
@@ -55,57 +58,62 @@ const Navbar = () => {
 
     return (
         <>
-                <div className='logo'>
-                    <h1>Grocsy</h1>
-                </div>
-                <div className='nav-btns'>
-                    <button id='home' className='active' onClick={() => {
-                        handleClick("home");
-                    }}>Home</button>
+            <div className='logo'>
+                <h1>Grocsy</h1>
+            </div>
+            <div className='nav-btns'>
+                <button id='home' className='active' onClick={() => {
+                    handleClick("home");
+                }}>Home</button>
 
-                    {
-                        token ? (
-                            userType === 'seller' ?
-                                (
-                                    <button id='seller-dashboard' onClick={() => {
-                                        handleClick("seller-dashboard")
-                                    }}>Seller Dashboard</button>
-                                ) :
-                                (
-                                    <button id='orders' onClick={() => {
-                                        handleClick('orders')
-                                    }}>Orders</button>
-                                )
-                        ) : null
-                    }
+                {
+                    token ? (
+                        userType === 'seller' ?
+                            (
+                                <button id='seller-dashboard' onClick={() => {
+                                    handleClick("seller-dashboard")
+                                }}>Seller Dashboard</button>
+                            ) :
+                            (
+                                <button id='orders' onClick={() => {
+                                    handleClick('orders')
+                                }}>Orders</button>
+                            )
+                    ) : null
+                }
 
-                    {
-                        token ? (
+                {
+                    token ? (
+                        <>
                             <button id='logout' onClick={() => {
                                 handleClick("logout");
                             }}>Logout</button>
-                        ) : null
-                    }
-                </div>
-                <div className='login-signup'>
-                    {
-                        token ? (
-                            <>
-                                <button className='profile-name'>{name}</button>
-                                <div className='profile-image'></div>
-                            </>
-                        ) : (
-                            <>
-                                <button id='login' onClick={() => {
-                                    handleClick("login");
-                                }}>Login</button>
-                                <button id='signup' onClick={() => {
-                                    handleClick("signup");
-                                }}>Sign Up</button>
-                            </>
-                        )
-                    }
-                </div>
+                        </>
+                    ) : null
+                }
+            </div>
+            <div className='login-signup'>
+                {
+                    token ? (
+                        <>
+                            <button id='cart' onClick={() => {
+                                handleClick("cart");
+                            }}><i className="fas fa-shopping-cart"></i></button>
+                            <button className='profile-name'>{name}</button>
+                            <div className='profile-image'></div>
+                        </>
+                    ) : (
+                        <>
+                            <button id='login' onClick={() => {
+                                handleClick("login");
+                            }}>Login</button>
+                            <button id='signup' onClick={() => {
+                                handleClick("signup");
+                            }}>Sign Up</button>
+                        </>
+                    )
+                }
+            </div>
         </>
     )
 }
