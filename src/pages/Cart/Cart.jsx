@@ -114,7 +114,7 @@ const Cart = ({ cItem }) => {
                 </div>
                 <div className="subtotal">
                     <h3>Subtotal<span><span>&#8377;</span>{subtotal}</span></h3>
-                    <button>Checkout</button>
+                    <button type="submit" className="checkout-btn">Checkout</button>
                 </div>
             </div>
         </>

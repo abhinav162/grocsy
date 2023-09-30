@@ -1,5 +1,14 @@
-.navbar .logo h1 {
-  padding: 10px;
+.navbar .logo {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0 30px;
+}
+
+.navbar .logo img {
+  width: 60px;
+  object-fit: contain;
 }
 
 .navbar .nav-btns {

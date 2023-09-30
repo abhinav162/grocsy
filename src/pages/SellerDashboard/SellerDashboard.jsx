@@ -52,9 +52,9 @@ const SellerDashboard = () => {
 
     return (
         <div className='seller-dashboard'>
-            <h2>Seller Dashboard</h2>
             {/* List of products added by the seller */}
             <div className='uploaded-products'>
+                <h2>Seller Dashboard</h2>
                 <h3>Your Products</h3>
                 <table className='products-table'>
                     <thead>
@@ -94,7 +94,7 @@ const SellerDashboard = () => {
                                                         },
                                                     });
 
-                                                    toast.success(response.data.message,{
+                                                    toast.success(response.data.message, {
                                                         duration: 2000,
                                                         position: 'bottom-right',
                                                     });

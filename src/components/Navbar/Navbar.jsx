@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Cart from '../../pages/Cart/Cart';
 import axiosInstance from '../../axios';
+import icon from '../../assets/icon.png'
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -135,6 +136,7 @@ const Navbar = () => {
     return (
         <>
             <div className='logo'>
+                <img src={icon}></img>
                 <h1>Grocsy</h1>
             </div>
             <div className='nav-btns'>
