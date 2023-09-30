@@ -7,13 +7,13 @@
     "categories-heading"
     "categories"
     "features";
-    grid-template-rows: 45vh 80px auto 80px auto auto;
+    grid-template-rows: 55vh 80px auto 80px auto auto;
     font-weight: 200;
 }
 
 .home-banner {
     grid-area: banner;
-    background-image: url('../../assets/banner.webp');
+    background-image: url('../../assets/banner.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -25,16 +25,19 @@
     /* grid-template-rows: 100%; */
 }
 
+
+
 .banner-content{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
     border-radius: 10px;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(15px);
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 20px;
+    padding: 30px;
 }
 
 .banner-content > * {
@@ -42,27 +45,19 @@
 }
 
 .banner-content span {
-    color: var(--accent-1);
+    /* color: var(--accent-1); */
+    color: rgb(246, 255, 0);
 }
 
 .banner-content h2 {
     font-size: xx-large;
     font-weight: 600;
+    color: white;
 }
 
 .banner-content h3 {
     font-weight: 300;
-    color: rgba(67, 67, 67, 0.652);
-}
-
-.banner-content button {
-    border: var(--border);
-    transition: all 0.3s ease-in-out;
-    padding: 10px 20px;
-}
-
-.banner-content button:hover {
-    background-color: var(--accent-1);
+    /* color: rgba(67, 67, 67, 0.652); */
     color: white;
 }
 
@@ -93,6 +88,10 @@
     width: 100%;
     overflow: hidden;
     /* padding: 30px; */
+    /* use webkit scroll bar to disable  */
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .categories-list {
@@ -129,6 +128,7 @@
 .feature .product {
     border-radius: 20% 0 20% 0;
     width: 20em;
+    height: 300px;
     background-color: white;
     cursor: default;
 }
@@ -147,6 +147,22 @@
 /* MEDIA QUERIES */
 
 @media screen and (max-width:768px) {
+
+    .banner-content {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .banner-content h2 {
+        font-size: x-large;
+    }
+
+    .banner-content h3 {
+        font-size: large;
+        text-align: left;
+        width: 100%;
+    }
+    
     .home-products {
         justify-content: space-evenly;
     }

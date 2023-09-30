@@ -54,20 +54,66 @@ const SellerDashboard = () => {
         <div className='seller-dashboard'>
             <h2>Seller Dashboard</h2>
             {/* List of products added by the seller */}
-            <div>
-                <h3>Your Products:</h3>
-                {products.length > 0 ?
-                    (
-                        products.map((product, i) => (
-                            <div key={i}>
-                                <Hcard id={product._id} name={product.name} desc={product.description} price={product.price} imageUrl={product.imageUrl} quantity={product.quantity} unit={product.unit} category={product.category} fetchSellerProducts={fetchSellerProducts} />
-                            </div>
-                        ))
-                    ) :
-                    (
-                        <p>No products listed yet</p>
-                    )}
+            <div className='uploaded-products'>
+                <h3>Your Products</h3>
+                <table className='products-table'>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Product Image</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Unit</th>
+                            <th>Category</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
 
+                    <tbody>
+                        {products.length > 0 ?
+                            (
+                                products.map((product, i) => (
+                                    <tr key={i}>
+                                        <td>{i + 1}</td>
+                                        <td><img src={product.imageUrl} style={{ height: "40px" }}></img></td>
+                                        <td>{product.name}</td>
+                                        <td>{product.price}</td>
+                                        <td>{product.quantity}</td>
+                                        <td>{product.unit}</td>
+                                        <td>{product.category}</td>
+                                        <td>
+                                            <button className='edit-btn' onClick={() => {
+                                                modalHandler("open");
+                                            }}>Edit</button>
+                                            <button className='delete-btn' onClick={async () => {
+                                                try {
+                                                    const response = await axiosInstance().delete('/delete-product/' + product._id, {
+                                                        headers: {
+                                                            Authorization: `Bearer ${localStorage.getItem('token')}`,
+                                                        },
+                                                    });
+
+                                                    toast.success(response.data.message,{
+                                                        duration: 2000,
+                                                        position: 'bottom-right',
+                                                    });
+                                                    fetchSellerProducts();
+                                                } catch (error) {
+                                                    console.error(error);
+                                                }
+                                            }}>Delete</button>
+                                        </td>
+                                    </tr>
+                                ))
+                            ) :
+                            (
+                                <tr>
+                                    <td colSpan='8'>No products listed yet</td>
+                                </tr>
+                            )}
+                    </tbody>
+                </table>
                 <button className='add-product-btn' onClick={() => {
                     modalHandler("open");
                 }}>Add Product</button>
@@ -79,7 +125,7 @@ const SellerDashboard = () => {
                     modalHandler("close");
                 }
             }}>
-                <ProductForm toFetch={toFetch} setToFetch={setToFetch}/>
+                <ProductForm toFetch={toFetch} setToFetch={setToFetch} />
             </div>
             <Toaster />
         </div>

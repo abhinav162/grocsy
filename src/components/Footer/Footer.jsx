@@ -48,7 +48,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-p5-cr">
-                    <p className="footer-bottom">© 2021 Grocsy. All rights reserved.</p>
+                    <p className="footer-bottom">© 2023 Grocsy. All rights reserved.</p>
                 </div>
             </div>
         </>

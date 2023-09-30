@@ -22,14 +22,59 @@ const Home = () => {
         fetchProducts()
     }, [])
 
+    const categoryArray = [
+        {
+            name: "Vegitables",
+            imageUrl: "https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/a136osnwjhpjuqfvezf0"
+        },
+        {
+            name: "Fruits",
+            imageUrl: "https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/myaxzhkilmrqcdjc1jk2"
+        },
+        {
+            name: "Dairy",
+            imageUrl: "https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/fcvquyiassig8sipm9zu"
+        },
+        {
+            name: "Soft Drinks",
+            imageUrl: "https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/inoyaehxwpuggromfe8n"
+        },
+        {
+            name: "Meat",
+            imageUrl: "https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/mybfwlcis2yezk1fqrii"
+        },
+        {
+            name: "Sea Food",
+            imageUrl: "https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/uphkfls2wio6zmtftrex"
+        }
+    ]
+
+    const featuresArray = [
+        {
+            name: "Fresh and Organic",
+            imageUrl: "https://res.cloudinary.com/grocsy-uploads/image/upload/v1692870361/grocsy-products/hbfipm6dbd9gubzslvyk.png"
+        },
+        {
+            name: "Free Delivery",
+            imageUrl: "https://res.cloudinary.com/grocsy-uploads/image/upload/v1692871129/grocsy-products/phlgbr96qqqj1fjuy6xa.png"
+        },
+        {
+            name: "Easy Payments",
+            imageUrl: "https://res.cloudinary.com/grocsy-uploads/image/upload/v1692871179/grocsy-products/ate6svdzy6lzgcjbv6oc.png"
+        },
+        {
+            name: "24/7 Support",
+            imageUrl: "https://res.cloudinary.com/grocsy-uploads/image/upload/v1692891411/grocsy-products/od0nnsuq0hzso9bcc26d.png"
+        }
+    ]
+
     return (
         <>
             <div className="home">
                 <div className="home-banner">
                     <div className="banner-content">
-                        <h2>fresh and <span>organic</span> products for your daily needs</h2>
+                        <h2>fresh <span>grocery</span> products for your daily needs</h2>
                         <h3>healthy food healthy life</h3>
-                        <button>Apply for free sample</button>
                     </div>
                 </div>
 
@@ -62,24 +107,15 @@ const Home = () => {
 
                 <div className="categories">
                     <div className="categories-list">
-                        <div className="category">
-                            <Card name="Vegitables" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/a136osnwjhpjuqfvezf0" />
-                        </div>
-                        <div className="category">
-                            <Card name="Fruits" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/myaxzhkilmrqcdjc1jk2" />
-                        </div>
-                        <div className="category">
-                            <Card name="Dairy" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/fcvquyiassig8sipm9zu" />
-                        </div>
-                        <div className="category">
-                            <Card name="Soft Drinks" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/inoyaehxwpuggromfe8n" />
-                        </div>
-                        <div className="category">
-                            <Card name="Meat" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/mybfwlcis2yezk1fqrii" />
-                        </div>
-                        <div className="category">
-                            <Card name="Sea Food" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/f_auto,q_auto/v1/grocsy-products/uphkfls2wio6zmtftrex" />
-                        </div>
+                        {
+                            categoryArray.map((category, i) => {
+                                return (
+                                    <div key={i} className="category">
+                                        <Card name={category.name} imageUrl={category.imageUrl} />
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
 
@@ -89,21 +125,18 @@ const Home = () => {
                         <span>Why Grocsy?</span>
                     </h1>
                     <div className="features-list">
-                        <div className="feature">
-                            <Card name="Fresh and Organic" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/v1692870361/grocsy-products/hbfipm6dbd9gubzslvyk.png" showBtn={false} />
-                        </div>
-                        <div className="feature">
-                            <Card name="Free Delivery" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/v1692871129/grocsy-products/phlgbr96qqqj1fjuy6xa.png" showBtn={false} />
-                        </div>
-                        <div className="feature">
-                            <Card name="Easy Payments" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/v1692871179/grocsy-products/ate6svdzy6lzgcjbv6oc.png" showBtn={false} />
-                        </div>
-                        <div className="feature">
-                            <Card name="24/7 Support" imageUrl="https://res.cloudinary.com/grocsy-uploads/image/upload/v1692891411/grocsy-products/od0nnsuq0hzso9bcc26d.png" showBtn={false} />
-                        </div>
+                        {
+                            featuresArray.map((feature, i) => {
+                                return (
+                                    <div key={i} className="feature">
+                                        <Card name={feature.name} imageUrl={feature.imageUrl} showBtn={false} />
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
-            </div >
+            </div>
         </>
     )
 }

@@ -86,7 +86,7 @@ const ProductForm = ({toFetch, setToFetch }) => {
                             <option value="soft-drinks">Soft Drinks</option>
                             <option value="meat">Meat</option>
                             <option value="seafood">Seafood</option>
-                        </select>
+                        </select> 
                     </div>
                     <div>
                         <label htmlFor="name">Product Name:</label>

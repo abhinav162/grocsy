@@ -11,7 +11,6 @@ const AddToCart = ({ productID }) => {
             quantity: quantity,
         }
         axiosInstance().patch(`/add-to-cart/`, reqBody).then((res) => {
-            console.log(res.data);
             toast.success(res.data.message, {
                 position: "bottom-right",
                 style: {
@@ -21,8 +20,7 @@ const AddToCart = ({ productID }) => {
                 },
             });
         }).catch((err) => {
-            console.log(err);
-            toast.error("Error", {
+            toast.error(err.response.data.message, {
                 position: "bottom-right",
                 style: {
                     borderRadius: '10px',

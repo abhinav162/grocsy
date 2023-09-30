@@ -1,0 +1,144 @@
+.footer-content {
+  /* margin: 10px;
+  padding: 30px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+  grid-template-areas: "about contact  social  subscribe" "copyrgt copyrgt copyrgt copyrgt";
+  margin: 0 20px 0 20px;
+}
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    grid-template-areas: "about" "contact" "social" "subscribe" "copyrgt";
+  }
+}
+
+.footer-p1 {
+  grid-area: about;
+}
+
+.footer-p2 {
+  grid-area: contact;
+}
+
+.footer-p3 {
+  grid-area: social;
+}
+
+.footer-p4 {
+  grid-area: subscribe;
+}
+
+.footer-p5-cr {
+  grid-area: copyrgt;
+  margin: 0 0 0 0;
+  font-size: large !important;
+}
+
+.footer h3 {
+  margin-top: 10px;
+}
+
+.footer-p1,
+.footer-p2,
+.footer-p3,
+.footer-p4,
+.footer-p5-cr {
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(67, 67, 67, 0.652);
+}
+.footer-p1 a,
+.footer-p2 a,
+.footer-p3 a,
+.footer-p4 a,
+.footer-p5-cr a {
+  text-decoration: none;
+  color: rgba(67, 67, 67, 0.652);
+}
+.footer-p1 ul,
+.footer-p2 ul,
+.footer-p3 ul,
+.footer-p4 ul,
+.footer-p5-cr ul {
+  padding: 0;
+  list-style: none;
+}
+.footer-p1 li,
+.footer-p2 li,
+.footer-p3 li,
+.footer-p4 li,
+.footer-p5-cr li {
+  padding: 0 0 5px 0;
+}
+.footer-p1 span, .footer-p1 a,
+.footer-p2 span,
+.footer-p2 a,
+.footer-p3 span,
+.footer-p3 a,
+.footer-p4 span,
+.footer-p4 a,
+.footer-p5-cr span,
+.footer-p5-cr a {
+  transition: all 0.3s ease-in-out;
+}
+.footer-p1 li:hover span, .footer-p1 li:hover a,
+.footer-p2 li:hover span,
+.footer-p2 li:hover a,
+.footer-p3 li:hover span,
+.footer-p3 li:hover a,
+.footer-p4 li:hover span,
+.footer-p4 li:hover a,
+.footer-p5-cr li:hover span,
+.footer-p5-cr li:hover a {
+  color: var(--accent-2);
+  margin: 0 0 0 10px;
+}
+
+.footer-p1 .social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.footer-p1 .social-links i {
+  color: var(--accent-2);
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  background-color: #eee;
+}
+.footer-p1 .social-links i:hover {
+  color: white;
+  background-color: var(--accent-2);
+}
+
+.footer-p4 {
+  overflow: hidden;
+}
+.footer-p4 input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px solid #eee;
+  background-color: #eee;
+  margin: 10px 0 10px 0;
+}
+.footer-p4 button {
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px solid #eee;
+  background-color: var(--accent-2);
+  color: white;
+  margin: 10px 0 10px 0;
+}/*# sourceMappingURL=Footer.css.map */

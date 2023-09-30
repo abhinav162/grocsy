@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useNavigate, Navigate, useLocation } from 'react-router-dom'
-import './App.css'
+import './App.scss'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
