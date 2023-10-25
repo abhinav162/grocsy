@@ -97,6 +97,11 @@ const SellerDashboard = () => {
                                                     toast.success(response.data.message, {
                                                         duration: 2000,
                                                         position: 'bottom-right',
+                                                        style: {
+                                                            borderRadius: '10px',
+                                                            background: '#333',
+                                                            color: '#fff',
+                                                        },
                                                     });
                                                     fetchSellerProducts();
                                                 } catch (error) {
